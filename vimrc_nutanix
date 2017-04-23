@@ -1,0 +1,75 @@
+source ~/cscope_maps.vim
+
+" set line numbers in vim. Can be toggled using F2
+set number
+nnoremap <F2> :set nonumber!<CR>
+set nocompatible
+filetype plugin indent on
+
+" indentation related options
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set smartindent
+
+" Have a color column to show 80 column width
+" highlight ColorColumn ctermbg=8
+set colorcolumn=80
+
+" turn syntax highlighting on
+set t_Co=256
+syntax on
+
+" search options for vim
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+set ignorecase
+" set nows
+
+nnoremap <F4> :set mouse=a<CR>
+nnoremap <F5> :set mouse=<CR>
+
+" list special characters. Can be toggled using F4
+set listchars=tab:>-,trail:~,extends:>,precedes:<
+set nolist
+nnoremap <F3> :set list!<CR>
+
+" modeline options
+set modeline
+
+" highlight matching braces
+set showmatch
+
+" Complete options
+set complete+=U
+set background=dark
+colorscheme desert
+
+" let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+execute pathogen#infect()
+set laststatus=2
+set statusline+=%F
+
+" Vundle vimrc
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+"
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ervandew/supertab'
+Plugin 'indent/cpp.vim'
+
+" End configuration, makes the plugins available
+call vundle#end()
+filetype plugin indent on
